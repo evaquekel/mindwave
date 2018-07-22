@@ -16,6 +16,8 @@ var App = new function () {
     // connect to device.
     this.connection = new WebSocket('ws://localhost:8080');
 
+    this.videoIsPlaying = false;
+
     this.init = function () {
         self.stopVideo();
         this.connection.onmessage = function (e) { self.processData(e) }
@@ -35,19 +37,34 @@ var App = new function () {
 
     // stop video and show loading screen.
     this.stopVideo = function () {
+        self.videoIsPlaying = false;
         self.vid.pause();
-        self.vid.currentTime = 0;
+
+        setTimeout(function() {
+            self.vid.currentTime = 0;
+        },1000);
+        
         self.loading.style.display = "flex";
-        self.vid.style.display = "none";
+
+        self.vid.classList.add("fadeOut");
+        self.vid.classList.add("animated");
+
         self.attentionLevel.style.display = "none";
     }
 
     // restart the video.
     this.restartVideo = function () {
-        self.vid.play();
-        self.vid.style.display = "block";
-        self.loading.style.display = "none";
-        self.attentionLevel.style.display = "block";
+        if(!self.videoIsPlaying)
+        {
+            self.videoIsPlaying = true;
+            self.vid.play();
+            self.vid.style.display = "block";
+            self.loading.style.display = "none";
+            
+            self.vid.classList.remove("fadeOut");
+            self.vid.classList.add("animated");
+            self.vid.classList.add("fadeIn");
+        }
     }
 
     // set the volume of the video.
