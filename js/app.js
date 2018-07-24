@@ -16,7 +16,7 @@ var App = new function () {
     // connect to device.
     this.connection = new WebSocket('ws://localhost:8080');
 
-    this.videoIsPlaying = true;
+    this.videoIsPlaying = false;
 
     this.init = function () {
         self.stopVideo();
