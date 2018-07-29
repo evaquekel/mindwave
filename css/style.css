@@ -5,6 +5,8 @@ body {
     height: 100%;
     overflow: hidden;
     font-family: Verdana, Geneva, Tahoma, sans-serif ;
+    font-size: 10px;
+
 }
 
 #myVideo {
@@ -18,12 +20,10 @@ body {
 
 
 .loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 70%;
-    color: antiquewhite;
+    text-align: center;
+    color: white;
 }
+
 
 .attention-level {
     position: absolute;
@@ -31,7 +31,7 @@ body {
     left:0px;
     width: 100%;
     height: 20px;
-    background-color: antiquewhite;
+    background-color: white;
 }
 .attention-level meter {
     width: 100%;

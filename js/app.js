@@ -44,7 +44,7 @@ var App = new function () {
             self.vid.currentTime = 0;
         },1000);
         
-        self.loading.style.display = "flex";
+        self.loading.style.display = "block";
 
         self.vid.classList.add("fadeOut");
         self.vid.classList.add("animated");
