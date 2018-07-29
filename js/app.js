@@ -64,6 +64,8 @@ var App = new function () {
             self.vid.classList.remove("fadeOut");
             self.vid.classList.add("animated");
             self.vid.classList.add("fadeIn");
+
+            self.attentionLevel.style.display = "block";
         }
     }
 
