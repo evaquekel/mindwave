@@ -49,16 +49,12 @@ Date.prototype.addDays = function(days) {
     "valueZoomable": true,
     "valueLineAlpha": 0.5
   },
-  "valueScrollbar": {
-    "autoGridCount": true,
-    "color": "#000000",
-    "scrollbarHeight": 50
-  },
   "categoryField": "date",
   "categoryAxis": {
     "parseDates": true,
     "dashLength": 1,
-    "minorGridEnabled": true
+    "minorGridEnabled": true,
+    "labelsEnabled": false  
   },
   "valueAxes": [
     {
