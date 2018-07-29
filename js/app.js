@@ -13,6 +13,12 @@ var App = new function () {
     // attention level meter.
     this.attentionLevelMeter = document.getElementById("attention-level-meter");
 
+    // set the chart.
+    this.chart = chart;
+
+    // set the initial day of the chart.
+    this.chartDay = new Date();
+
     // connect to device.
     this.connection = new WebSocket('ws://localhost:8080');
 
@@ -49,7 +55,7 @@ var App = new function () {
         self.vid.classList.add("fadeOut");
         self.vid.classList.add("animated");
 
-        self.attentionLevel.style.display = "none";
+        //self.attentionLevel.style.display = "none";
     }
 
     // restart the video.
@@ -65,6 +71,8 @@ var App = new function () {
             self.vid.classList.add("animated");
             self.vid.classList.add("fadeIn");
 
+            //self.chart.clear();
+
             self.attentionLevel.style.display = "block";
         }
     }
@@ -75,6 +83,7 @@ var App = new function () {
             var attention = data.eSense.attention;
             var volume = attention / 100;
             self.vid.volume = volume;
+            console.log(volume);
         } catch (err) { return; }
     }
 
@@ -82,7 +91,17 @@ var App = new function () {
     this.setAttentionLevel = function (data) {
         try {
             var attention = data.eSense.attention;
-            self.attentionLevelMeter.value = attention / 100;
+            if(chart.dataProvider.length >= 10)
+            {
+                chart.dataProvider.shift();
+            }
+
+            self.chartDay = self.chartDay.addDays(1);
+            self.chart.dataProvider.push( {
+                date: self.chartDay,
+                value: attention
+              } );
+              chart.validateData();
         } catch (err) { return; }
     }
 }

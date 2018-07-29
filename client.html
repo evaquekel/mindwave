@@ -6,9 +6,17 @@
     <title>Project Eva</title>
     <link href="./css/style.css" rel="stylesheet">
     <link href="./css/animate.css" rel="stylesheet">
+    <script src="./amcharts/amcharts.js"></script>
+    <script src="./amcharts//serial.js"></script>
+    <script src="./amcharts/plugins/export/export.min.js"></script>
+    <link rel="stylesheet" href="./amcharts/plugins/export/export.css" type="text/css" media="all" />
+    <script src="./amcharts/themes/black.js"></script>
 </head>
 
 <body>
+
+
+					
 
     <video autoplay  loop id="myVideo">
         <source src="./video/DEF-EXPORT-CYBORGS.mp4" type="video/mp4">
@@ -23,11 +31,12 @@
     </div>
 
     <div id="attention-level" class="attention-level">
-        <meter id="attention-level-meter" value="0.6">attention level</meter>
+            <div id="chartdiv"></div>		
     </div>
 
 </body>
 
+<script src="./js/addChart.js"></script>
 <script src="./js/app.js">
 </script>
 <script> 
