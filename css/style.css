@@ -22,6 +22,12 @@ body {
 .loading {
     text-align: center;
     color: white;
+    height:100%;
+}
+
+.loading video{
+    height: 80% !important;
+    width: auto !important;
 }
 
 
@@ -37,7 +43,7 @@ body {
 }
 
 .attention-level #chartdiv{
-    height: 100px;
+    height: 1200px;
 }
 
 .amcharts-chart-div a {
