@@ -35,7 +35,7 @@ Date.prototype.addDays = function(days) {
     "bulletColor": "#FFFFFF",
     "bulletSize": 5,
     "hideBulletsCount": 50,
-    "lineThickness": 5,
+    "lineThickness": 2,
     "title": "red line",
     "useLineColorForBulletBorder": true,
     "valueField": "value",

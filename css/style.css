@@ -43,7 +43,8 @@ body {
 }
 
 .attention-level #chartdiv{
-    height: 1200px;
+    height: 100%;
+
 }
 
 .amcharts-chart-div a {

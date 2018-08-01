@@ -74,6 +74,9 @@ var App = new function () {
             //self.chart.clear();
 
             self.attentionLevel.style.display = "block";
+
+            self.chart.dataProvider = [ ];
+            self.chart.validateData();
         }
     }
 
