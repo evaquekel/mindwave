@@ -29,6 +29,7 @@ Date.prototype.addDays = function(days) {
       "color": "#ffffff",
       "type": "smoothedLine"
     },
+    "lineColor" : "#ffffff",
     "fillAlphas": 0.2,
     "bullet": "round",
     "bulletBorderAlpha": 1,

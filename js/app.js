@@ -55,6 +55,13 @@ var App = new function () {
         self.vid.classList.add("fadeOut");
         self.vid.classList.add("animated");
 
+        self.chart.dataProvider = [ ];
+        self.chart.dataProvider.push( {
+            date: self.chartDay,
+            value: 0
+          } );
+        self.chart.validateData();
+
         //self.attentionLevel.style.display = "none";
     }
 
@@ -75,8 +82,7 @@ var App = new function () {
 
             self.attentionLevel.style.display = "block";
 
-            self.chart.dataProvider = [ ];
-            self.chart.validateData();
+
         }
     }
 
