@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Project Eva</title>
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/animate.css" rel="stylesheet">
+    <script src="./amcharts/amcharts.js"></script>
+    <script src="./amcharts//serial.js"></script>
+    <script src="./amcharts/plugins/export/export.min.js"></script>
+    <link rel="stylesheet" href="./amcharts/plugins/export/export.css" type="text/css" media="all" />
+    <script src="./amcharts/themes/black.js"></script>
+</head>
+
+<body>
+    <div class="loading" id="loading">
+           <video autoplay muted loop>
+            <source src="./video/load-screen-animation.mp4" type="video/mp4"  >
+            </video>
+            <h1>Put on the headset to start</h1>
+
+    </div>
+
+    <div id="attention-level" class="attention-level">
+            <div id="chartdiv"></div>		
+    </div>
+
+</body>
+
+<script src="./js/addChart.js"></script>
+<script src="./js/app-graph.js">
+</script>
+<script> 
+    App.init();
+</script>
+
+</html>
